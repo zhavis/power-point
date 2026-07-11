@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>ارائه‌ی اسلاید</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- jsPDF and html2canvas for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     <!-- Persian Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Marked for markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -27,6 +32,11 @@
                         <span class="slide-title-bar" id="slideTitle">در حال بارگذاری...</span>
                     </div>
                     <div class="slide-controls">
+                        <select id="presentationSelector" class="presentation-selector">
+                            <option value="osi">OSI Presentation</option>
+                        </select>
+                        <button id="shareBtn" class="ctrl-btn" title="Copy shareable link (Ctrl+Shift+C)">🔗</button>
+                        <button id="exportPdfBtn" class="ctrl-btn" title="Export as PDF (Ctrl+Shift+P)">📄</button>
                         <button id="fullscreenBtn" class="ctrl-btn" title="تمام صفحه (F)">⛶</button>
                     </div>
                 </div>
@@ -50,7 +60,15 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
+    <!-- Loading Overlay for PDF Export -->
+    <div id="pdf-loading-overlay" class="pdf-export-loading" style="display:none;">
+        <div class="spinner"></div>
+        <div class="progress-text">Generating PDF...</div>
+        <div class="progress-bar-container">
+            <div class="progress-fill-bar" id="pdf-progress-fill"></div>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
