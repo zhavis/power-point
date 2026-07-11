@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>ارائه‌ی اسلاید</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <!-- Persian Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <div class="presentation-container">
+            <!-- Slide Content - Full Page -->
+            <div class="slide-viewport">
+                <div class="slide-content" id="slideContent">
+                    <div class="loading">در حال بارگذاری ارائه...</div>
+                </div>
+            </div>
+
+            <!-- Minimal Controls - Overlay -->
+            <div class="controls-overlay" id="controlsOverlay">
+                <div class="top-controls">
+                    <div class="slide-info">
+                        <span class="slide-counter" id="slideCounter">۱ / ۱</span>
+                        <span class="slide-title-bar" id="slideTitle">در حال بارگذاری...</span>
+                    </div>
+                    <div class="slide-controls">
+                        <button id="fullscreenBtn" class="ctrl-btn" title="تمام صفحه (F)">⛶</button>
+                    </div>
+                </div>
+
+                <div class="bottom-controls">
+                    <button id="prevBtn" class="ctrl-btn nav-btn" disabled>▶</button>
+                    
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="slide-dots" id="slideDots"></div>
+                    </div>
+                    
+                    <button id="nextBtn" class="ctrl-btn nav-btn">◀</button>
+                </div>
+            </div>
+
+            <!-- Auto-hide indicator -->
+            <div class="hint">ماوس را حرکت دهید یا ضربه بزنید</div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
